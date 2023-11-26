@@ -1,0 +1,38 @@
+body
+{
+    background-color: var(--verde-escuro);
+}
+
+.navbar
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em 0;
+    color: var(--branco);
+}
+
+.navbar ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    list-style: none;
+}
+
+.navbar li
+{
+    transition: all .35s;
+}
+
+.navbar a
+{
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.navbar ul:hover > :not(:hover)
+{
+    opacity: .3;
+}
