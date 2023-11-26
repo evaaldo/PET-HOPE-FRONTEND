@@ -32,6 +32,11 @@ body
     text-decoration: none;
 }
 
+#logout
+{
+    color: var(--vermelho-sangue);
+}
+
 .navbar ul:hover > :not(:hover)
 {
     opacity: .3;
