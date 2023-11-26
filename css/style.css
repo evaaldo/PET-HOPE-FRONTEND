@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@500&display=swap');
+@import url(/css/login.css);
+
+*
+{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+:root
+{
+    --preto: #000;
+    --branco: #fff;
+    --vermelho: #f00;
+    --verde: #0f0;
+    --azul: #00f;
+    --verde-claro: #7cbb5f;
+    --verde-escuro: #4F6F52;
+    --bege: #dfdfa9;
+}
+
+body
+{
+    font-family: 'Lato', sans-serif;
+}
+
+.copyright
+{
+    font-size: .65em;
+    position: absolute;
+    margin: 0 auto 0 auto;
+    bottom: 10px;
+    font-family: 'Lato', sans-serif;
+}
