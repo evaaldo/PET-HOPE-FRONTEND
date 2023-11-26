@@ -1,6 +1,6 @@
 @import url(/css/style.css);
 
-.login
+.signin-signout
 {
     width: 100vw;
     height: 100vh;
@@ -12,7 +12,7 @@
     background-color: var(--verde-escuro);
 }
 
-.login div
+.signin-signout div
 {
     padding: 2em;
     display: flex;
@@ -23,13 +23,13 @@
     gap: 2em;
 }
 
-.login img
+.signin-signout img
 {
     width: 40vw;
     border-radius: 10px;
 }
 
-.login form 
+.signin-signout form 
 {
     display: flex;
     flex-direction: column;
@@ -40,25 +40,25 @@
     font-size: 1.5em;
 }
 
-.login form h1
+.signin-signout form h1
 {
     margin-bottom: .5em;
 }
 
-.login form p
+.signin-signout form p
 {
     font-weight: 500;
     font-size: .75em;
 }
 
-.login input
+.signin-signout input
 {
     padding: .5em 1em;
     border-radius: 3px;
     width: 100%;
 }
 
-.login form button
+.signin-signout form button
 {
     font-size: .75em;
     color: var(--branco);
@@ -71,13 +71,13 @@
     margin-top: 1.15em;
 }
 
-.login .cadastrar
+.signin-signout .cadastrar
 {
     margin-top: 1em;
     font-size: .5em;
 }
 
-.login form a
+.signin-signout form a
 {
     font-weight: 700;
     color: var(--preto);
@@ -86,8 +86,13 @@
     color: var(--verde-escuro);
 }
 
-.login form button:hover
+.signin-signout form button:hover
 {
     background-color: var(--verde-escuro);
     cursor: pointer;
+}
+
+.cadastro-box img
+{
+    width: 45vw;
 }
