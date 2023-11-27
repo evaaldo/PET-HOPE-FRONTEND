@@ -8,6 +8,7 @@
     border: 0;
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 :root
@@ -22,12 +23,14 @@
     --verde-escuro: #4F6F52;
     --bege: rgba(0, 0, 0, 0.8);
     --laranja: rgb(247, 122, 55);
+    --preto-fosco: #2b2d31;
 }
 
 body
 {
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
+    max-width: 100vw;
 }
 
 .copyright
