@@ -22,10 +22,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--bege);
+    background-color: var(--preto-sign);
     border-radius: 15px;
     gap: 2em;
     color: var(--branco);
+    backdrop-filter: blur(15px);
 }
 
 .signin-signout img
