@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@500&display=swap');
 @import url(/css/signin-signout.css);
 @import url(/css/home.css);
+@import url(/css/navbar.css);
 
 *
 {
@@ -19,12 +20,14 @@
     --azul: #00f;
     --verde-claro: #7cbb5f;
     --verde-escuro: #4F6F52;
-    --bege: #dfdfa9;
+    --bege: rgba(0, 0, 0, 0.8);
+    --laranja: rgb(247, 122, 55);
 }
 
 body
 {
     font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .copyright

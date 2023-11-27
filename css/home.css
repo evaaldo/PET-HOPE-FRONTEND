@@ -1,43 +1,25 @@
 body
 {
-    background-color: var(--verde-escuro);
+    background-color: var(--laranja);
 }
 
-.navbar
+.home
 {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 2em 0;
-    color: var(--branco);
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/img/PET-HOME-2.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.navbar ul
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    list-style: none;
-}
-
-.navbar li
-{
-    transition: all .35s;
-}
-
-.navbar a
+.home .titulo
 {
     color: var(--branco);
-    text-decoration: none;
-}
-
-#logout
-{
-    color: var(--vermelho-sangue);
-}
-
-.navbar ul:hover > :not(:hover)
-{
-    opacity: .3;
+    text-align: center;
+    font-size: 4em;
+    margin-top: 3.5em;
 }

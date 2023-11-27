@@ -9,18 +9,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--verde-escuro);
+    background-color: var(--laranja);
+    background-image: url(/img/LOGIN-GATO.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .signin-signout div
 {
-    padding: 2em;
+    padding: 2em 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--bege);
     border-radius: 15px;
     gap: 2em;
+    color: var(--branco);
 }
 
 .signin-signout img
