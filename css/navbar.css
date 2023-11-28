@@ -36,6 +36,14 @@
     border-radius: 5px;
 }
 
+#logout
+{
+    color: var(--branco);
+    background-color: var(--vermelho-sangue);
+    padding: .25em .75em;
+    border-radius: 5px;
+}
+
 .navbar ul:hover > :not(:hover)
 {
     opacity: .3;

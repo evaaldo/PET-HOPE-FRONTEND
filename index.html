@@ -23,63 +23,14 @@
     </section>
     <section class="adotar" id="adotar">
         <h1>Veja os animais que temos em adoção</h1>
-        <div class="animais">
-            <div class="animal">
+        <div class="animais" id="animais">
+            <!-- <div class="animal">
                 <h2>Lebron</h2>
                 <p>Raça: Labrador</p>
                 <p>Idade: 1 ano</p>
                 <img src="/img/PET-HOME-1.jpg" alt="">
                 <button>Adotar</button>
-            </div>
-            <div class="animal">
-                <h2>Lebron</h2>
-                <p>Raça: Labrador</p>
-                <p>Idade: 1 ano</p>
-                <img src="/img/PET-HOME-1.jpg" alt="">
-                <button>Adotar</button>
-            </div>
-            <div class="animal">
-                <h2>Lebron</h2>
-                <p>Raça: Labrador</p>
-                <p>Idade: 1 ano</p>
-                <img src="/img/PET-HOME-1.jpg" alt="">
-                <button>Adotar</button>
-            </div>
-            <div class="animal">
-                <h2>Lebron</h2>
-                <p>Raça: Labrador</p>
-                <p>Idade: 1 ano</p>
-                <img src="/img/PET-HOME-1.jpg" alt="">
-                <button>Adotar</button>
-            </div>
-            <div class="animal">
-                <h2>Lebron</h2>
-                <p>Raça: Labrador</p>
-                <p>Idade: 1 ano</p>
-                <img src="/img/PET-HOME-1.jpg" alt="">
-                <button>Adotar</button>
-            </div>
-            <div class="animal">
-                <h2>Lebron</h2>
-                <p>Raça: Labrador</p>
-                <p>Idade: 1 ano</p>
-                <img src="/img/PET-HOME-1.jpg" alt="">
-                <button>Adotar</button>
-            </div>
-            <div class="animal">
-                <h2>Lebron</h2>
-                <p>Raça: Labrador</p>
-                <p>Idade: 1 ano</p>
-                <img src="/img/PET-HOME-1.jpg" alt="">
-                <button>Adotar</button>
-            </div>
-            <div class="animal">
-                <h2>Lebron</h2>
-                <p>Raça: Labrador</p>
-                <p>Idade: 1 ano</p>
-                <img src="/img/PET-HOME-1.jpg" alt="">
-                <button>Adotar</button>
-            </div>
+            </div> -->
         </div>
     </section>
     <section class="contato" id="contato">
@@ -93,5 +44,71 @@
         </div>
         <p>© 2023 PET HOPE</p>
     </section>
+
+    <script>
+        // Função para criar uma div para cada animal
+        function criarDivAnimal(animal) {
+            const divAnimal = document.createElement('div');
+            divAnimal.classList.add('animal');
+    
+            // Adiciona o nome do animal como título (h2)
+            const titulo = document.createElement('h2');
+            titulo.textContent = animal.name; // Substitua 'nome' pelo nome real do atributo na API
+            divAnimal.appendChild(titulo);
+    
+            // Adiciona a raça do animal como parágrafo
+            const racaParagrafo = document.createElement('p');
+            racaParagrafo.textContent = `Raça: ${animal.type}`; // Substitua 'raca' pelo nome real do atributo na API
+            divAnimal.appendChild(racaParagrafo);
+    
+            // Adiciona a idade do animal como parágrafo
+            const idadeParagrafo = document.createElement('p');
+            idadeParagrafo.textContent = `Idade: ${animal.age} ano(s)`; // Substitua 'idade' pelo nome real do atributo na API
+            divAnimal.appendChild(idadeParagrafo);
+
+            // Adiciona a descrição do animal como parágrafo
+            const descricaoParagrafo = document.createElement('p');
+            descricaoParagrafo.textContent = `Descrição: ${animal.description}`; // Substitua 'idade' pelo nome real do atributo na API
+            divAnimal.appendChild(descricaoParagrafo);
+    
+            // Adiciona a imagem do animal
+            const imagem = document.createElement('img');
+            imagem.src = animal.imagemUrl; // Substitua 'imagemUrl' pelo nome real do atributo na API
+            imagem.alt = ''; // Substitua por uma descrição adequada, se disponível na API
+            divAnimal.appendChild(imagem);
+
+            if(animal.imagemUrl == null)
+            {
+                const semFotoParagrafo = document.createElement('p');
+                semFotoParagrafo.textContent = `(Animal sem fotinha 🥺)`; // Substitua 'idade' pelo nome real do atributo na API
+                divAnimal.appendChild(semFotoParagrafo);
+            }
+    
+            // Adiciona um botão "Adotar"
+            const botaoAdotar = document.createElement('button');
+            botaoAdotar.textContent = 'Adotar';
+            divAnimal.appendChild(botaoAdotar);
+    
+            // Adiciona a div ao corpo do documento
+            const divAnimaisExistente = document.getElementById('animais');
+            divAnimaisExistente.appendChild(divAnimal);
+        }
+    
+        // Função para buscar dados da API e criar divs para cada animal
+        async function buscarEExibirAnimais() {
+            try {
+                const resposta = await fetch('http://localhost:3333/pets'); // Substitua 'URL_DA_API' pela URL real da sua API
+                const dados = await resposta.json();
+    
+                // Para cada animal retornado pela API, chama a função para criar a div correspondente
+                dados.forEach(animal => criarDivAnimal(animal));
+            } catch (erro) {
+                console.error('Erro ao buscar dados da API:', erro);
+            }
+        }
+    
+        // Chama a função para buscar e exibir os animais quando a página carrega
+        window.onload = buscarEExibirAnimais;
+    </script>
 </body>
 </html>
