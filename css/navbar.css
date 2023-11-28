@@ -28,10 +28,10 @@
     text-decoration: none;
 }
 
-#logout
+#admin
 {
     color: var(--branco);
-    background-color: var(--vermelho-sangue);
+    background-color: var(--laranja);
     padding: .25em .75em;
     border-radius: 5px;
 }
