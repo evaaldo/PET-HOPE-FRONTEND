@@ -30,6 +30,9 @@ body
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 1em 0;
+    background-color: var(--laranja);
+    color: var(--branco);
 }
 
 .adotar h1
@@ -46,6 +49,7 @@ body
     gap: 16px;
     width: 70%;
     transition: .35s;
+    margin-bottom: 4.5em;
 }
 
 .adotar .animal
@@ -55,9 +59,11 @@ body
     box-shadow: 0 .15em 1em var(--preto);
     margin-bottom: 1em;
     padding: 1em;
-    border-radius: 5px;
+    border-radius: 5%;
     font-weight: 700;
     text-align: center;
+    background-color: var(--preto);
+    backdrop-filter: blur(5px);
 }
 
 .adotar .animal h2
@@ -75,7 +81,7 @@ body
 
 .adotar .animal button
 {
-    background-color: var(--verde-claro);
+    background-color: var(--verde-escuro);
     color: var(--branco);
     padding: .5em 1em;
     font-weight: 700;
