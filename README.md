@@ -1,4 +1,4 @@
-<h1>PetHope - Front-End</h1>
+<h1>PetHope</h1>
 <h3>✦ O que é esse repositório?</h3>
 <p>Esse repositório faz referência a um sistema de adoção de animais fictícios, implementando um backend e um frontend para que um usuário comum possa usufruir do sistema em ambiente de produção.</p>
 
