@@ -54,7 +54,8 @@
             })
             .then(data => {
                 alert("Login bem-sucedido", data)
-                window.location.href = "doar.html"
+                //require parameter
+                window.location.href = `doar.html?acessToken=${data.acessToken}`;
             })
             .catch(error => {
                 alert("Erro no login", error)

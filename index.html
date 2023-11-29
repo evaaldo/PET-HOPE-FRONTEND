@@ -24,13 +24,13 @@
     <section class="adotar" id="adotar">
         <h1>Veja os animais que temos em adoção</h1>
         <div class="animais" id="animais">
-            <!-- <div class="animal">
+            <div class="animal">
                 <h2>Lebron</h2>
                 <p>Raça: Labrador</p>
                 <p>Idade: 1 ano</p>
                 <img src="/img/PET-HOME-1.jpg" alt="">
                 <a id="btnModal">Adotar</a>
-            </div> -->
+            </div>
         </div>
         <dialog id="modal">
             <h2>Que notícia boa!</h2>
@@ -62,7 +62,7 @@
             divAnimal.appendChild(titulo);
     
             const racaParagrafo = document.createElement('p');
-            racaParagrafo.textContent = `Raça: ${animal.type}`;
+            racaParagrafo.textContent = `Tipo: ${animal.type}`;
             divAnimal.appendChild(racaParagrafo);
     
             const idadeParagrafo = document.createElement('p');
@@ -85,14 +85,39 @@
                 divAnimal.appendChild(semFotoParagrafo);
             }
     
-            const botaoAdotar = document.createElement('a');
+            const botaoAdotar = document.createElement('button');
             botaoAdotar.textContent = 'Adotar';
-            botaoAdotar.href = 'adotar.html';
+            botaoAdotar.id = 'btnModal';
             divAnimal.appendChild(botaoAdotar);
+            console.log("primeiro")
     
             const divAnimaisExistente = document.getElementById('animais');
             divAnimaisExistente.appendChild(divAnimal);
+
+            botaoAdotar.addEventListener('click', function() {
+            excluirAnimal(animal.id);
+    });
         }
+
+        async function excluirAnimal(id) {
+            try {
+                const resposta = await fetch(`http://localhost:3333/pets/${id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                    if (resposta.ok) {
+                        alert(`Bichinho adotado com sucesso! Trate-o com muito amor e carinho.`);
+
+                    } else {
+                        console.error(`Erro ao excluir o animal com ID ${id}.`);
+                    }
+                } catch (erro) {
+                    console.error('Erro ao realizar a exclusão:', erro);
+                }
+            }
     
         async function buscarEExibirAnimais() {
             try {
@@ -107,18 +132,6 @@
 
         window.onload = function() {
             buscarEExibirAnimais();
-
-            const btnModal = document.getElementById('btnModal');
-            const modal = document.getElementById('modal');
-            const btnCancelar = document.getElementById('btnCancelar');
-
-            btnModal.onclick = function() {
-                modal.show();
-            }
-
-            btnCancelar.onclick = function() {
-                modal.close();
-            }
         };
     </script>
 </body>

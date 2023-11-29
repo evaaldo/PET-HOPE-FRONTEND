@@ -46,7 +46,6 @@
             let descricao = document.getElementById("descricaoInput").value;
             let foto = document.getElementById("fotoInput").files[0];
 
-            // Ler o conteúdo do arquivo como uma string base64
             const reader = new FileReader();
             reader.onloadend = function () {
                 const data = {
@@ -54,7 +53,7 @@
                     age: idade,
                     type: raca,
                     description: descricao,
-                    photo_url: reader.result // Aqui você envia a foto como uma string base64
+                    photo_url: reader.result
                 };
 
                 fetch("http://localhost:3333/pets", {
@@ -76,9 +75,11 @@
                 .catch(error => {
                     alert("Erro na criação:", error);
                 });
+
+                //if acess token
             };
 
-            reader.readAsDataURL(foto); // Lê o arquivo como uma string base64
+            reader.readAsDataURL(foto);
         });
     </script>
 </body>
