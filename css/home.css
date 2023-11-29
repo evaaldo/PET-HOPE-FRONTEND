@@ -80,7 +80,7 @@ body
     margin: 1em auto 1em auto;
 }
 
-.animal a
+.animal button
 {
     background-color: var(--verde-escuro);
     color: var(--branco);
@@ -93,7 +93,7 @@ body
     text-decoration: none;
 }
 
-.animal a:hover
+.animal button:hover
 {
     opacity: .7;
 }

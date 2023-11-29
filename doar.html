@@ -6,6 +6,7 @@
     <title>Pet Hope - Adoção</title>
 
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/doar.js" defer></script>
 </head>
 <body>
     <section class="doar" id="doar">
@@ -14,18 +15,19 @@
             <ul>
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/index.html">Adotar</a></li>
-                <li><a id="logout" href="index.html">Sair</a></li>
+                <li><a id="logout" href="/index.html">Sair</a></li>
             </ul>
-            <h1>Usuário</h1>
+            <h1>Doar</h1>
         </div>
         <form id="formDoar" method="post" action="">
             <h1>Doe um animalzinho</h1>
             <p>Nome</p>
             <input type="text" name="nome" id="nomeInput" placeholder="Nome..">
             <p>Idade</p>
+            <p class="descricao-idade">Apenas NEWBORD, JUNIOR, TEEN, ADULT e OLD</p>
             <input type="text" name="idade" id="idadeInput" placeholder="Idade..">
-            <p>Raça</p>
-            <input type="text" name="raca" id="racaInput" placeholder="Raça..">
+            <p>Dog/Cat</p>
+            <input type="text" name="raca" id="racaInput" placeholder="Tipo..">
             <p>Descrição</p>
             <input type="text" name="descricao" id="descricaoInput" placeholder="Descrição..">
             <p>Foto</p>
@@ -33,54 +35,5 @@
             <button type="submit">Entrar</button>
         </form>
     </section>
-
-    <script>
-        const formDoar = document.getElementById("formDoar");
-
-        formDoar.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            let nome = document.getElementById("nomeInput").value;
-            let idade = document.getElementById("idadeInput").value;
-            let raca = document.getElementById("racaInput").value;
-            let descricao = document.getElementById("descricaoInput").value;
-            let foto = document.getElementById("fotoInput").files[0];
-
-            const reader = new FileReader();
-            reader.onloadend = function () {
-                const data = {
-                    name: nome,
-                    age: idade,
-                    type: raca,
-                    description: descricao,
-                    photo_url: reader.result
-                };
-
-                fetch("http://localhost:3333/pets", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Erro na criação");
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    alert("Criação bem-sucedida:", data);
-                })
-                .catch(error => {
-                    alert("Erro na criação:", error);
-                });
-
-                //if acess token
-            };
-
-            reader.readAsDataURL(foto);
-        });
-    </script>
 </body>
 </html>
